@@ -2,14 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
-    <title></title>
+    <title>WhatsApp</title>
   </head>
   <body>
     <div id="main_container">
         <!-- left section -->
         <section id="left_section">
+          <header>
+            <!-- avatar -->
+            <div class="avatar_section">
+              <div class="img_container">
+                <img src="img/avatar_1.webp" alt="">
+              </div>
+              <h3>Leonardo Ranaldo</h3>
+            </div>
+            <!-- /avatar -->
 
+            <!-- icon -->
+            <div class="icon_section">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <!-- /icon -->
+          </header>
+          <div id="enable_notification">
+            <span><i class="fas fa-bell-slash"></i></span>
+            <div class="container">
+              <h5>Ricevi notifiche di nuovi messaggi</h5>
+              <a href="#">attiva notifiche desktop</a>
+            </div>
+          </div>
+          <div id="search_contact">
+            <input type="text" name="" value="" placeholder="cerca o inizia una nuova chat">
+          </div>
         </section>
         <!-- /left section -->
 
@@ -19,7 +47,6 @@
         </section>
         <!-- /right section -->
       </div>
-    </div>
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
