@@ -78,11 +78,16 @@ var app = new Vue({
       },
     ],
     activeUser: 0,
-
+    activeChat: {}
+  },
+  created: function() {
+    this.activeChat = this.contacts[0]
   },
   methods: {
     updateActiveUser: function (newIndex) {
       this.activeUser = newIndex;
-    }
+      this.activeChat = this.contacts[newIndex]
+    },
+
   }
 })
