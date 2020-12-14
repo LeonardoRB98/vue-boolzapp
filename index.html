@@ -19,7 +19,7 @@
               <img src="img/avatar_1.webp" alt="">
             </div>
             <div class="user_name">
-                <h4>{{ message }}</h4>
+                <h4>{{ message1 }}</h4>
             </div>
           </div>
 
@@ -49,13 +49,13 @@
 
         <!-- contacts -->
         <div id="contacts">
-          <div class="contact" v-for="(contact, index) in contacts">
+          <div class="contact" v-for="(contact, index) in contacts" :class="(index == activeUser) ? 'active' : '' " @click="updateActiveUser(index)">
             <div class="user_icon">
               <img :src="contact.avatar" :alt="contact.name">
             </div>
             <div class="user_name">
               <h4>{{contact.name}}</h4>
-              <span class="small_text">{{}}</span>
+              <span class="small_text">latest message</span>
             </div>
             <span class="date small_text">10/01/20</span>
           </div>
