@@ -16,8 +16,54 @@ body::before {
   background-color: #009688;
   overflow: visible;
 }
-
-
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 5px 15px;;
+  background-color: #EAEAEA;
+}
+header i {
+  font-size: 20px;
+  padding: 10px;
+  color: #adadad;
+}
+.small_text {
+  font-size: 12px;
+  color: lightgray;
+}
+.user {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+}
+.user_icon {
+  display: inline-block;
+  height: 100%;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user_icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.user_name {
+  width: calc(100% - 40px);
+  padding: 0 8px;
+}
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+  /* background-color: violet; */
+}
 #main_container {
   display: flex;
   position: relative;
@@ -29,49 +75,7 @@ body::before {
 #left_section {
   width: 30%;
   height: 100%;
-  background-color: lime;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  padding: 15px;
-  background-color: #EAEAEA;
-}
-header > div:first-child {
-  width: 70%;
-  height: 100%;
-}
-header > div:last-child {
-  width: 30%;
-  height: 100%;
-}
-header i {
-  font-size: 20px;
-  padding: 10px;
-  color: #adadad;
-}
-.img_container {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-.img_container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.avatar_section {
-  display: flex;
-  align-items: center;
-}
-.icon_section {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  background-color: #ffffff;
 }
 #enable_notification {
   display: flex;
@@ -92,21 +96,124 @@ header i {
   color: #8EDAFC;
   background-color: #ffffff;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding-left: 5px;
+#enable_notification .container {
+  padding-left: 8px;
+}
+#enable_notification .container a {
+  color: gray;
+}
 
-}
 #search_contact {
-  height: 30px;
+  height: 40px;
   width: 100%;
-  background-color: red;
+  padding: 5px;
+  background-color: #FAFAFA;
 }
+#search_contact button, input {
+  height: 100%;
+  border: 1px solid lightgray;
+  box-shadow: none;
+  background-color: #ffffff;
+}
+
+#search_contact button {
+  width: 40px;
+  color: #adadad;
+}
+#search_contact input {
+  width: calc(100% - 40px - 5px);
+}
+#contacts {
+  overflow-y: auto;
+}
+.contact {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 5px 10px 3px;
+  border-bottom: 1px solid lightgray;
+}
+.contact:last-child {
+  border-bottom: none;
+}
+.contact .user_icon {
+  height: 80%;
+  width: 45px;
+}
+.date {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
 #right_section {
   width: 70%;
   height: 100%;
   background-color: coral;
+}
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 50px - 50px);
+  padding: 30px  35px;
+  background-image: url(../img/background.png);
+  background-size: contain;
+  overflow-y: scroll;
+}
+.message {
+  position: relative;
+  display: flex;
+  min-width: 150px;
+  max-width: 50%;
+  min-height: 40px;
+  padding: 10px 10px 20px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.user_message {
+  align-self: flex-end;
+  background-color: #D5F9BA;
+}
+.contact_message {
+  align-self: flex-start;
+  background-color: #DED6CF;
+}
+.message .right_now {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+.text_area {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #F3EEEA;
+}
+.text_area .emoji_vocal_msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60px;
+  cursor: pointer;
+}
+.text_area .emoji_vocal_msg i {
+  font-size: 20px;
+}
+.text_area .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 120px);
+  padding: 5px 0;
+}
+.text_area .input input {
+  width: 100%;
+  border-radius: 10px;
 }

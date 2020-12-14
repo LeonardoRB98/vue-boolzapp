@@ -4,49 +4,116 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>WhatsApp</title>
   </head>
   <body>
     <div id="main_container">
-        <!-- left section -->
-        <section id="left_section">
-          <header>
-            <!-- avatar -->
-            <div class="avatar_section">
-              <div class="img_container">
-                <img src="img/avatar_1.webp" alt="">
-              </div>
-              <h3>Leonardo Ranaldo</h3>
-            </div>
-            <!-- /avatar -->
 
-            <!-- icon -->
-            <div class="icon_section">
-              <i class="fas fa-circle-notch"></i>
-              <i class="fas fa-comment-alt"></i>
-              <i class="fas fa-ellipsis-v"></i>
+      <!-- left section -->
+      <section id="left_section">
+        <header>
+
+          <div class="user">
+            <div class="user_icon">
+              <img src="img/avatar_1.webp" alt="">
             </div>
-            <!-- /icon -->
-          </header>
-          <div id="enable_notification">
-            <span><i class="fas fa-bell-slash"></i></span>
-            <div class="container">
-              <h5>Ricevi notifiche di nuovi messaggi</h5>
-              <a href="#">attiva notifiche desktop</a>
+            <div class="user_name">
+                <h4>{{ message }}</h4>
             </div>
           </div>
-          <div id="search_contact">
-            <input type="text" name="" value="" placeholder="cerca o inizia una nuova chat">
+
+          <div class="icons">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
           </div>
-        </section>
-        <!-- /left section -->
+        </header>
 
-        <!-- /right section -->
-        <section id="right_section">
+        <!-- enable notification -->
+        <div id="enable_notification">
+          <span><i class="fas fa-bell-slash"></i></span>
+          <div class="container">
+            <h5>Ricevi notifiche di nuovi messaggi</h5>
+            <a class="small_text" href="#">attiva notifiche desktop</a>
+          </div>
+        </div>
+        <!-- /enable notification -->
 
-        </section>
-        <!-- /right section -->
-      </div>
+        <!-- search contact -->
+        <div id="search_contact">
+          <button type="button" name="button"><i class="fas fa-search"></i></button>
+          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+        </div>
+        <!-- /search contact -->
+
+        <!-- contacts -->
+        <div id="contacts">
+          <div class="contact" v-for="(contact, index) in contacts">
+            <div class="user_icon">
+              <img :src="contact.avatar" :alt="contact.name">
+            </div>
+            <div class="user_name">
+              <h4>{{contact.name}}</h4>
+              <span class="small_text">{{}}</span>
+            </div>
+            <span class="date small_text">10/01/20</span>
+          </div>
+        </div>
+        <!-- /contacts -->
+      </section>
+      <!-- /left section -->
+
+      <!-- right section -->
+      <section id="right_section">
+        <header>
+          <div class="user">
+            <div class="user_icon">
+              <img src="img/avatar_2.png" alt="">
+            </div>
+            <div class="user_name">
+                <h4>User name</h4>
+                <span class="small_text">ultimo accesso oogi alle </span>
+            </div>
+          </div>
+
+          <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </header>
+
+        <div class="chat">
+          <div class="message user_message">
+            <span>ciao</span>
+            <span class="right_now small_text">14/12/2020 16:54:43</span>
+          </div>
+
+          <div class="message user_message">
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </span>
+            <span class="right_now small_text">14/12/2020 16:54:43</span>
+          </div>
+
+          <div class="message contact_message">
+            <span>Lorem </span>
+            <span class="right_now small_text">14/12/2020 16:54:43</span>
+          </div>
+        </div>
+        <div class="text_area">
+          <div class="emoji_vocal_msg">
+            <i class="far fa-smile-beam"></i>
+          </div>
+          <div class="input">
+            <input type="text" name="" value="">
+          </div>
+          <div class="emoji_vocal_msg">
+              <i class="fas fa-microphone"></i>
+          </div>
+        </div>
+      </section>
+      <!-- /right section -->
+    </div>
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
