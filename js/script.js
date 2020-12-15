@@ -78,7 +78,6 @@ var app = new Vue({
       },
     ],
     activeUser: 0,
-<<<<<<< HEAD
     textInput: '',
     newMessage: {
       date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -95,18 +94,11 @@ var app = new Vue({
   },
   created: function() {
     this.filteredContacts = this.contacts;
-=======
-    activeChat: {}
-  },
-  created: function() {
-    this.activeChat = this.contacts[0]
->>>>>>> main
   },
   methods: {
     updateActiveUser: function (newIndex) {
       console.log(newIndex);
       this.activeUser = newIndex;
-<<<<<<< HEAD
     },
     sendNewMessage: function() {
       this.newMessage.text = this.textInput;
@@ -124,10 +116,5 @@ var app = new Vue({
       });
       console.log(this.filteredContacts);
     },
-=======
-      this.activeChat = this.contacts[newIndex]
-    },
-
->>>>>>> main
   }
 })
