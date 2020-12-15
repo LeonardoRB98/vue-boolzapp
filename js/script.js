@@ -80,16 +80,20 @@ var app = new Vue({
     activeUser: 0,
     textInput: '',
     newMessage: {
-      date: 'now',
+      date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
       text: '',
       status: 'sent'
     },
     autoReplay: {
-      date: 'now',
+      date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
       text: 'ok',
       status: 'sent'
     },
-
+    searchInput: '',
+    filteredContacts: [],
+  },
+  created: function() {
+    this.filteredContacts = this.contacts;
   },
   methods: {
     updateActiveUser: function (newIndex) {
@@ -100,10 +104,17 @@ var app = new Vue({
       this.newMessage.text = this.textInput;
       this.contacts[this.activeUser].messages.push(this.newMessage);
       this.textInput = '';
+      this.names;
 
       var reply = setTimeout(function() {
         app.contacts[app.activeUser].messages.push(app.autoReplay);
       },1000);
-    }
+    },
+    contactSearch: function() {
+      this.filteredContacts = this.contacts.filter((element) => {
+        return element.name.includes(this.searchInput);
+      });
+      console.log(this.filteredContacts);
+    },
   }
 })
