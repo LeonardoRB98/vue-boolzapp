@@ -78,11 +78,32 @@ var app = new Vue({
       },
     ],
     activeUser: 0,
+    textInput: '',
+    newMessage: {
+      date: 'now',
+      text: '',
+      status: 'sent'
+    },
+    autoReplay: {
+      date: 'now',
+      text: 'ok',
+      status: 'sent'
+    },
 
   },
   methods: {
     updateActiveUser: function (newIndex) {
+      console.log(newIndex);
       this.activeUser = newIndex;
+    },
+    sendNewMessage: function() {
+      this.newMessage.text = this.textInput;
+      this.contacts[this.activeUser].messages.push(this.newMessage);
+      this.textInput = '';
+
+      var reply = setTimeout(function() {
+        app.contacts[app.activeUser].messages.push(app.autoReplay);
+      },1000);
     }
   }
 })

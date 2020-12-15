@@ -32,7 +32,7 @@ header i {
 }
 .small_text {
   font-size: 12px;
-  color: lightgray;
+  color: black;
 }
 .user {
   display: flex;
@@ -169,6 +169,7 @@ header i {
 .message {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   min-width: 150px;
   max-width: 50%;
   min-height: 40px;
@@ -176,11 +177,11 @@ header i {
   margin-bottom: 10px;
   border-radius: 10px;
 }
-.user_message {
+.sent {
   align-self: flex-end;
   background-color: #D5F9BA;
 }
-.contact_message {
+.received {
   align-self: flex-start;
   background-color: #DED6CF;
 }
