@@ -181,7 +181,11 @@ header i {
   align-self: flex-end;
   background-color: #D5F9BA;
 }
+<<<<<<< HEAD
 .received {
+=======
+.recived {
+>>>>>>> main
   align-self: flex-start;
   background-color: #DED6CF;
 }
