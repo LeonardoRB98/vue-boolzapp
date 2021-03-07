@@ -87,7 +87,7 @@ var app = new Vue({
     autoReplay: {
       date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
       text: 'ok',
-      status: 'sent'
+      status: 'receive'
     },
     searchInput: '',
     filteredContacts: [],
